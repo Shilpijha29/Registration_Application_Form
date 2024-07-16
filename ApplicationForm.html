@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>फ्लैट के आवंटनार्थ आवेदन-पत्र</title>
+    <link rel="stylesheet" href="app.css">
+    <script src="app.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>बिहार राज्य आवास बोर्ड, पटना - 800015</h1>
+    <h2>फ्लैट के आवंटनार्थ आवेदन-पत्र</h2>
+
+<div class="form-group">
+    <label for="joint_account_checkbox">कृपया इसे टिक करें अगर यह संयुक्त खाता है:</label>
+    <input type="checkbox" id="joint_account_checkbox" onchange="toggleJointAccount()">
+</div>
+
+    <form id="applicationForm">
+        <div class="form-group">
+            <label for="flatType">आवेदित फ्लैट का प्रकार (HIG/MIG/LIG/EWS):</label>
+            <select id="category" name="category">
+                <option value="HIG">HIG</option>
+                <option value="MIG">MIG</option>
+                <option value="LIG">LIG</option>
+                <option value="EWS">EWS</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="applicantName">आवेदक का नाम (हिंदी एवं अंग्रेजी में):</label>
+            <input type="text" id="applicantName" name="applicantName">
+            <input type="text" id="applicantName" name="applicantName">
+
+        </div>
+
+        <div class="form-group joint-account-section">
+            <label for="coApplicantName">सह आवेदक का नाम (हिंदी एवं अंग्रेजी में):</label>
+            <input type="text" id="coApplicantName" name="coApplicantName">
+            <input type="text" id="coApplicantName" name="coApplicantName">
+        </div>
+
+        <div class="form-group">
+            <label for="applicantAge">आवेदन की तिथि पर उम्र (अक्षर एवं अंकों दोनों में):</label>
+            <input type="number" id="applicantAge" name="applicantAge">
+        </div>
+
+        <div class="form-group joint-account-section">
+            <label for="coApplicantAge">सह आवेदक की उम्र:</label>
+            <input type="number" id="coApplicantAge" name="coApplicantAge">
+        </div>
+        
+        <div class="form-group joint-account-section">
+            <label for="relationship">सह आवेदक का आवेदक के साथ संबंध:</label>
+            <input type="text" id="relationship" name="relationship">
+        </div>
+
+        <div class="form-group">
+            <label for="fatherHusbandName">आवेदक के पिता/पति का नाम:</label>
+            <input type="text" id="fatherHusbandName" name="fatherHusbandName">
+        </div>
+
+        <div class="form-group">
+            <label for="email">ई-मेल पता:</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="landline">लैंडलाइन (एस.टी.डी कोड के साथ)</label>
+            <input type="text" id="landline" name="landline">
+        </div>
+        
+        <div class="form-group">
+            <label for="mobile">मोबाइल नंबर</label>
+            <input type="text" id="mobile" name="mobile">
+        </div>        
+
+        <div class="form-group">
+            <label for="permanentAddress">आवेदक के पिता/पति/पत्नी का नाम एवं पूरा स्थायी पता:</label>
+            <label for="village_mohalla">ग्राम/मुहल्ला:</label>
+            <input type="text" id="village_mohalla" name="village_mohalla">
+
+            <label for="post_office">डाकघर: </label>
+            <input type="text" id="post_office" name="post_office">
+
+            <label for="police_station">थाना:</label>
+            <input type="text" id="police_station" name="police_station">
+
+            <label for="district">जिला:</label>
+            <input type="text" id="district" name="district">
+
+            <label for="pincode">पिन कोड:</label>
+            <input type="text" id="pincode" name="pincode">
+        </div>
+
+        <label for="aadhar_card">आवेदक का photo</label>
+            <input type="file" id="aadhar_card" name="aadhar_card">
+
+            <label for="aadhar_card">आवेदक का Signature</label>
+            <input type="file" id="aadhar_card" name="aadhar_card">
+        <div class="form-group">
+            <label for="currentAddress">आवेदक का स्थायी पता:</label>
+            <label for="current_village_mohalla">ग्राम/मुहल्ला:</label>
+            <input type="text" id="current_village_mohalla" name="current_village_mohalla">
+        
+            <label for="current_post_office">डाकघर: </label>
+            <input type="text" id="current_post_office" name="current_post_office">
+        
+            <label for="current_police_station">थाना:</label>
+            <input type="text" id="current_police_station" name="current_police_station">
+        
+            <label for="current_district">जिला:</label>
+            <input type="text" id="current_district" name="current_district">
+        
+            <label for="current_pincode">पिन कोड:</label>
+            <input type="text" id="current_pincode" name="current_pincode">
+        </div>
+        
+        <div class="form-group">
+            <input type="checkbox" id="same_as_current" onchange="copyCurrentAddress()">
+            <label for="same_as_current">कृपया इसे टिक करें अगर पत्राचार पता स्थायी पते के समान है:</label>
+        </div>
+        
+        <div class="form-group">
+            <label for="correspondenceAddress">आवेदक का पत्राचार का पता:</label>
+            <label for="correspondence_village_mohalla">ग्राम/मुहल्ला:</label>
+            <input type="text" id="correspondence_village_mohalla" name="correspondence_village_mohalla">
+        
+            <label for="correspondence_post_office">डाकघर: </label>
+            <input type="text" id="correspondence_post_office" name="correspondence_post_office">
+        
+            <label for="correspondence_police_station">थाना:</label>
+            <input type="text" id="correspondence_police_station" name="correspondence_police_station">
+        
+            <label for="correspondence_district">जिला:</label>
+            <input type="text" id="correspondence_district" name="correspondence_district">
+        
+            <label for="correspondence_pincode">पिन कोड:</label>
+            <input type="text" id="correspondence_pincode" name="correspondence_pincode">
+        </div>
+        
+
+        <div id="joint_account_section" class="joint-account-section" style="display: none;">
+            <div class="form-group">
+                <label for="coApplicantFatherHusbandName">सह आवेदक के पिता/पति/पत्नी का नाम एवं पूरा स्थायी पता:</label>
+                <label for="coApplicant_village_mohalla">ग्राम/मुहल्ला:</label>
+                <input type="text" id="coApplicant_village_mohalla" name="coApplicant_village_mohalla">
+        
+                <label for="coApplicant_post_office">डाकघर: </label>
+                <input type="text" id="coApplicant_post_office" name="coApplicant_post_office">
+        
+                <label for="coApplicant_police_station">थाना:</label>
+                <input type="text" id="coApplicant_police_station" name="coApplicant_police_station">
+        
+                <label for="coApplicant_district">जिला:</label>
+                <input type="text" id="coApplicant_district" name="coApplicant_district">
+        
+                <label for="coApplicant_pincode">पिन कोड:</label>
+                <input type="text" id="coApplicant_pincode" name="coApplicant_pincode">
+            </div>
+        
+            <label for="aadhar_card">सह आवेदक का photo</label>
+            <input type="file" id="aadhar_card" name="aadhar_card">
+
+            <label for="aadhar_card">सह आवेदक का Signature</label>
+            <input type="file" id="aadhar_card" name="aadhar_card"> 
+
+            <div class="form-group">
+                <label for="coApplicantPermanentAddress">सह आवेदक का स्थायी पता:</label>
+                <label for="coApplicant_village_mohalla">ग्राम/मुहल्ला:</label>
+                <input type="text" id="coApplicant_village_mohalla" name="coApplicant_village_mohalla">
+            
+                <label for="coApplicant_post_office">डाकघर: </label>
+                <input type="text" id="coApplicant_post_office" name="coApplicant_post_office">
+            
+                <label for="coApplicant_police_station">थाना:</label>
+                <input type="text" id="coApplicant_police_station" name="coApplicant_police_station">
+            
+                <label for="coApplicant_district">जिला:</label>
+                <input type="text" id="coApplicant_district" name="coApplicant_district">
+            
+                <label for="coApplicant_pincode">पिन कोड:</label>
+                <input type="text" id="coApplicant_pincode" name="coApplicant_pincode">
+            </div>
+            
+            <div class="form-group">
+                <input type="checkbox" id="same_as_coApplicant" onchange="copyCoApplicantAddress()">
+                <label for="same_as_coApplicant">कृपया इसे टिक करें अगर सह आवेदक का पत्राचार पता स्थायी पते के समान है:</label>
+            </div>
+            
+            <div class="form-group">
+                <label for="coApplicantCorrespondenceAddress">सह आवेदक का पत्राचार का पता:</label>
+                <label for="coApplicant_correspondence_village_mohalla">ग्राम/मुहल्ला:</label>
+                <input type="text" id="coApplicant_correspondence_village_mohalla" name="coApplicant_correspondence_village_mohalla">
+            
+                <label for="coApplicant_correspondence_post_office">डाकघर: </label>
+                <input type="text" id="coApplicant_correspondence_post_office" name="coApplicant_correspondence_post_office">
+            
+                <label for="coApplicant_correspondence_police_station">थाना:</label>
+                <input type="text" id="coApplicant_correspondence_police_station" name="coApplicant_correspondence_police_station">
+            
+                <label for="coApplicant_correspondence_district">जिला:</label>
+                <input type="text" id="coApplicant_correspondence_district" name="coApplicant_correspondence_district">
+            
+                <label for="coApplicant_correspondence_pincode">पिन कोड:</label>
+                <input type="text" id="coApplicant_correspondence_pincode" name="coApplicant_correspondence_pincode">
+            </div>
+        </div>
+        
+
+        <div class="form-group">
+            <label for="applicationCount">पति/पत्नी द्वारा आवेदक के पति/पत्नी का अलग-अलग आवेदन करने की स्थिति में:</label>
+            <input type="number" id="applicationCount" name="applicationCount">
+        </div>
+
+        <div class="form-group">
+            <label for="bankDetails">आईएफएससी कोड के साथ अपने खाता संख्या की पूर्ण विवरणी:</label>
+            <label for="bank_name">खाता संख्या</label>
+            <input type="text" id="bank_name" name="bank_name">
+        
+            <label for="branch">शाखा का नाम और पता</label>
+            <input type="text" id="branch" name="branch">
+        
+            <label for="transaction_id">खाता संख्या</label>
+            <input type="text" id="transaction_id" name="transaction_id">
+        
+            <label for="transaction_id">शाखा कोड</label>
+            <input type="text" id="transaction_id" name="transaction_id">
+        
+            <label for="transaction_id">आईएफएससी कोड</label>
+            <input type="text" id="transaction_id" name="transaction_id">
+        </div>
+        
+
+        <div class="form-group">
+            <label for="depositDetails">पंजीकरण राशि (डिपॉजिट) का विवरण:</label>
+            <label FOR ="DEPOSITMONEY">जमा राशि</label>
+            <input type="text"  name="branch">
+            <label FOR ="DEPOSITdate">जमा की तिथि</label>
+            <input type="text"  name="branch">
+            <label FOR ="DEPOSITMONEY">बैंक एवं शाखा का नाम </label>
+            <input type="text"  name="branch">
+            <label FOR ="DEPOSITMONEY">डीडी/आरटीजीएस/एनईएफटी संख्या</label>
+            <input type="text"  name="branch">
+        </div>
+
+        <div class="form-group">
+            <label for="applicantPAN">आवेदक का पैन नंबर:</label>
+            <input type="text" id="applicantPAN" name="applicantPAN">
+        </div>
+
+        <div class="form-group joint-account-section">
+            <label for="coApplicantPAN">सह आवेदक का पैन नंबर:</label>
+            <input type="text" id="coApplicantPAN" name="coApplicantPAN">
+        </div>
+
+        <h5>वार्षिक आय:</h5>
+
+        <div class="form-group">
+            <input type="radio" id="income_category_a" name="income_category" value="a">
+            <label for="income_category_a">(क) आर्थिक दृष्टि से कमजोर आय वर्ग ₹ 1,00,000/- या उससे कम (वार्षिक)</label>
+        </div>
+        
+        <div class="form-group">
+            <input type="radio" id="income_category_b" name="income_category" value="b">
+            <label for="income_category_b">(ख) अल्प आय वर्ग ₹ 1,00,000/- से अधिक एवं ₹ 2,00,000/- तक (वार्षिक)</label>
+        </div>
+        
+        <div class="form-group">
+            <input type="radio" id="income_category_c" name="income_category" value="c">
+            <label for="income_category_c">(ग) मध्यम आय वर्ग ₹ 2,00,000/- से अधिक एवं ₹ 5,00,000/- तक (वार्षिक)</label>
+        </div>
+        
+        <div class="form-group">
+            <input type="radio" id="income_category_d" name="income_category" value="d">
+            <label for="income_category_d">(घ) उच्च आय वर्ग ₹ 5,00,000/- से अधिक (वार्षिक)</label>
+        </div>
+        
+        <div class="form-group">
+            <label for="nomineeDetails">आवेदन/एकरारनामा नवीकरण/स्वीकृति-कक्षा प्राप्त करने के पूर्व आवेदक की निधन हो जाने की स्थिति में पति/पत्नी/पुत्र/पुत्री जिनका नामांक आवेदक चाहते हैं
+                श्री/श्रीमती:</label>
+            <input type="text" name="nomineeDetails"></input>
+        </div>
+
+        <div>
+            <h4>विशेष दावा:</h4>
+            
+            <strong>(क) यदि योजना विशेष के हेतु में आपकी जमीन बिहार राज्य आवास बोर्ड द्वारा अर्जित की गई है, तो भूअर्जन की पावती के साथ प्रमाण-पत्र संलग्न करें।</strong><br>
+            <strong>(ख) यदि आप अनुसूचित जाति/अनुसूचित जनजाति/विकलांग/अल्पसंख्यक जाति/पिछड़ी जाति के सदस्य हैं, तो संबंधित जाति/प्रमाण पत्र संलग्न करें।</strong><br>
+            <strong>(ग) यदि आप विकलांग हैं, तो चिकित्सा प्रमाण-पत्र संलग्न करें।</strong><br>
+            <strong>(घ) यदि आवेदक भूतपूर्व सैन्य सेवक अथवा उनकी आश्रितों की श्रेणी में आते हैं, तो संबंधित दस्तावेज संलग्न करें।</strong>
+        </div>
+        <br>
+        </form>
+        <div class="form-group">
+            <label for="declaration">घोषणा-पत्र:</label>
+            <form id="declarationForm">
+                <div class="form-group">
+                    <label for="applicantName">मैं श्री/श्रीमती:</label>
+                    <input type="text" id="applicantName" name="applicantName">
+                </div>
+                <p>उपयुक्त शहर में भू-खण्ड/मकान/फ्लैट के लिए बिहार राज्य आवास बोर्ड अधिनियम, 1982 तथा बिहार राज्य आवास बोर्ड (आवंटन, प्रबंधन, हस्तांतरण एवं निबंधन) विनियमन, 1983 के अनुसार मुझे ज्ञात है और इनके द्वारा बनाये गए नियमों के अंतर्गत आवेदन हेतु आवेदन देता/देती हूँ और तथानुसार मुझे आवेदन पत्र दिया गया है।</p>
+                
+                <p>मैं यह घोषित करता/करती हूँ कि कानूनी अनुबंध में दाखिल हूँ और इस आवेदन के सत्यापन में कोई भी अपात्रता का कारण नहीं है। यदि मेरे द्वारा दिया गया कोई भी जानकारी असत्य पायी जाती है, तो मैं विधिक कार्यवाही के लिए उत्तरदायी रहूँगा/रहूँगी।</p>
+        
+                <p>मैं आवास बोर्ड के द्वारा निर्धारित प्रारूप में शुल्क-राशि संलग्न कर रहा हूँ। उपयुक्त सभी जानकारी सही है और यदि भविष्य में कोई भी जानकारी असत्य पायी जाती है, तो मेरा आवेदन रद्द माना जायेगा और इसका सम्पूर्ण उत्तरदायित्व मेरा होगा।</p>
+        
+                <div class="form-group">
+                    <label for="applicantSignature">आवेदक का हस्ताक्षर:</label>
+                    <input type="file" id="applicantSignature" name="applicantSignature">
+                </div>
+        
+                <div class="form-group joint-account-section">
+                    <label for="coApplicantSignature">सह आवेदक का हस्ताक्षर:</label>
+                    <input type="file" id="coApplicantSignature" name="coApplicantSignature">
+                </div>
+            </form>
+        </div>
+
+        <div class="form-group">
+            <h4>अनुलग्नक:</h4>
+            <label for="signature">भू अर्जन संबंधित पावती एवं प्रमाण-पत्र</label>
+            <input type="file" id="signature" name="signature">
+
+            <label for="signature">जाति प्रमाण-पत्र</label>
+            <input type="file" id="signature" name="signature">
+
+            <label for="signature">आधार कार्ड की प्रति, पैन कार्ड की प्रति एवं आवासीय प्रमाण पत्र</label>
+            <input type="file" id="signature" name="signature">
+
+            <label for="signature">शपथ-पत्र</label>
+            <input type="file" id="signature" name="signature">
+
+            <label for="signature">जमा (डिपॉजिट का प्रमाण)</label>
+            <input type="file" id="signature" name="signature">
+
+            <label for="signature">भूतपूर्व सैनिक से संबंधित दस्तावेज</label>
+            <input type="file" id="signature" name="signature">
+
+            <label for="signature">आय प्रमाण पत्र</label>
+            <input type="file" id="signature" name="signature">
+
+            <label for="signature">विकलांगता प्रमाण पत्र</label>
+            <input type="file" id="signature" name="signature">
+
+            <div class="form-group">
+                <label for="affidavit">Affidavit:</label>
+                <input type="file" id="affidavit" name="affidavit">
+                <a href="abcd.com" target="_blank">Download here and after signing, attach above</a>
+            </div>
+    
+            <div class="form-group joint-account-section">
+                <label for="applicantAffidavit">आवेदक Affidavit:</label>
+                <input type="file" id="applicantAffidavit" name="applicantAffidavit">
+                <a href="abcd.com" target="_blank">Download here and after signing, attach above</a>
+            </div>
+    
+            <div class="form-group joint-account-section">
+                <label for="coApplicantAffidavit">सह आवेदक Affidavit:</label>
+                <input type="file" id="coApplicantAffidavit" name="coApplicantAffidavit">
+                <a href="abcd.com" target="_blank">Download here and after signing, attach above</a>
+            </div>
+
+
+        </div>
+
+        <button type="submit">जमा करें</button>
+    </form>
+</div>
+
+</body>
+</html>

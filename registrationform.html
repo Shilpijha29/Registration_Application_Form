@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bihar State Housing Board Registration Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+
+</head>
+<body>
+    <div>
+        <h1>Bihar State Housing Board</h1>
+        <h4>Allotment of Flats at Bahadurpur Housing Colony, Patna</h4>
+        <h5>REGISTRATION FORM TO GET BROCHURE FOR NEW ALLOTMENT OF FLATS</h5>
+        <form>
+            <label for="category">PLEASE SELECT YOUR CATEGORY:</label>
+            <select id="category" name="category">
+                <option value="General">General</option>
+                <option value="EBC">EBC</option>
+                <option value="SC">SC</option>
+                <option value="ST">ST</option>
+                <option value="BC">BC</option>
+                <option value="PH">PH</option>
+            </select>
+
+            <label for="ex_servicemen">If belongs to Ex. Servicemen category, please tick:</label>
+            <select id="ex_servicemen" name="ex_servicemen">
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
+            </select>
+
+            <label for="ex_servicemen">If belongs to person with disability, please tick:</label>
+            <select id="ex_servicemen" name="ex_servicemen">
+                <option value="YES">YES</option>
+                <option value="NO">NO</option>
+            </select>
+
+            <label for="ex_servicemen">Applicant Gender Type:</label>
+            <select id="ex_servicemen" name="ex_servicemen">
+                <option value="YES">Male</option>
+                <option value="NO">Female</option>
+                <option value="NO">Other</option>
+            </select>
+
+
+            <label for="name">NAME:</label>
+            <input type="text" id="name" name="name">
+
+            <label for="father_husband_name">FATHER’S/ HUSBAND’S NAME:</label>
+            <input type="text" id="father_husband_name" name="father_husband_name">
+
+            <label for="dob">DATE OF BIRTH:</label>
+            <input type="date" id="dob" name="dob">
+
+            <label for="mobile_no">MOBILE NO.:</label>
+            <input type="text" id="mobile_no" name="mobile_no">
+
+            <button type="button" class="btn" onclick="VerifyMob()">Verify Mobile No.</button>
+            <label for="email">E-MAIL ID:</label>
+            <input type="email" id="email" name="email">
+
+            <button type="button" class="btn" onclick="VerifyMob()">Verify Email Id.</button>
+
+            <label for="id_proof_name">ID PROOF NAME:</label>
+            <input type="text" id="id_proof_name" name="id_proof_name">
+
+            <label for="id_proof_no">ID PROOF NO.:</label>
+            <input type="text" id="id_proof_no" name="id_proof_no">
+
+            <label for="aadhar_card">Applicant's Id Proof:</label>
+            <input type="file" id="aadhar_card" name="aadhar_card">
+            <a>ID Proof: PAN, Driving License, Aadhar Card, Ration Card, and any other Identity Card Issued By Government</a>
+
+            <label for="aadhar_no">AADHAR NO.:</label>
+            <input type="text" id="aadhar_no" name="aadhar_no">
+
+            <label for="address">PERMANENT ADDRESS:</label>
+            <label for="village_mohalla">VILLAGE/MOHALLA:</label>
+            <input type="text" id="village_mohalla" name="village_mohalla">
+
+            <label for="post_office">POST OFFICE:</label>
+            <input type="text" id="post_office" name="post_office">
+
+            <label for="police_station">POLICE STATION:</label>
+            <input type="text" id="police_station" name="police_station">
+
+            <label for="district">DISTRICT:</label>
+            <input type="text" id="district" name="district">
+
+            <label for="state">STATE:</label>
+            <input type="text" id="state" name="state">
+
+            <label for="pincode">PINCODE:</label>
+            <input type="text" id="pincode" name="pincode">
+
+            <h3>Payment</h3>
+
+            <label for="payment_method">Payment Method:</label>
+            <select id="payment_method" name="payment_method" onchange="showPaymentOptions(this.value)">
+                <option value="">---Select---</option>
+                <option value="Challan">Challan</option>
+                <option value="Online">Online</option>
+            </select>
+
+            <div id="challan_payment" class="payment-section">
+                <h4>Challan Payment Details:</h4>
+                <label for="bank_name">Bank Name:</label>
+                <input type="text" id="bank_name" name="bank_name">
+
+                <label for="branch">Branch:</label>
+                <input type="text" id="branch" name="branch">
+
+                <label for="transaction_id">Transaction ID:</label>
+                <input type="text" id="transaction_id" name="transaction_id">
+
+                <label for="payment_date_time">Payment Date & Time:</label>
+                <input type="datetime-local" id="payment_date_time" name="payment_date_time">
+
+                <label for="paid_amount">Paid Amount (₹):</label>
+                <input type="number" id="paid_amount" name="paid_amount">
+            </div>
+
+            <div id="online_payment" class="payment-section">
+                <h4>Online Payment Details:</h4>
+                <label for="online_payment_mode">Payment Mode:</label>
+                <select id="online_payment_mode" name="online_payment_mode">
+                    <option value="">---Select---</option>
+                    <option value="UPI">UPI</option>
+                    <option value="Credit Card">Credit Card</option>
+                    <option value="Debit Card">Debit Card</option>
+                    <option value="NET_BANKING">NET BANKING</option>
+                </select>
+
+                <label for="online_transaction_id">Transaction ID:</label>
+                <input type="text" id="online_transaction_id" name="online_transaction_id">
+
+                <label for="online_payment_date_time">Payment Date & Time:</label>
+                <input type="datetime-local" id="online_payment_date_time" name="online_payment_date_time">
+
+                <label for="online_paid_amount">Paid Amount (₹):</label>
+                <input type="number" id="online_paid_amount" name="online_paid_amount">
+            </div>
+
+            <label for="signature">SIGNATURE/THUMB IMPRESSION:</label>
+            <input type="file" id="signature" name="signature">
+
+            <label for="date">DATE:</label>
+            <input type="date" id="date" name="date">
+
+            <p>
+                <strong>Declaration:</strong> I hereby declare that the details furnished above are true and correct to the best of my knowledge and belief and I undertake to inform you of any changes therein, immediately. In case any of the above information is found to be false or untrue or misleading or misrepresenting, I am aware that I may be held liable for it.
+            </p>
+            <button type="button" class="btn" onclick="submitForm()">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
